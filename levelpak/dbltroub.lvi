@@ -1,0 +1,98 @@
+;
+; Team Droid: Jam Edition
+; A programming puzzle game with cute robots.
+;
+; Copyright (C) Damian Gareth Walker, 2022.
+; "Double Trouble" Level Pack
+;
+
+; Level Symbols:
+;   . Floor
+;   # Wall
+;   ^ North conveyor
+;   > East conveyor
+;   v South conveyor
+;   < West conveyor
+;   \ Anticlockwise Turntable
+;   / Clockwise Turntable
+;   % Teleporter
+;   * Forcefield
+;   + Generator
+;   $ Reader
+;   G Guard on floor
+;   R Robot spawner on floor
+;   D Data card on floor
+;   W Walker on floor
+;   S Spring on floor
+;   P Phaser on floor
+;   C Crate on floor
+
+; Name of the Level Pack
+name Dbl Trouble
+
+; Level 1.
+level 1
+map #################............C.##.$........CC%C##..##########C.##..#......<%#C.##..#...D...v#..##..#.R...D..#..##..#........#..##..##########..##.R..........$.##..............#################
+
+; Level 2. 
+level 2
+map .....###########.....#...*.....#######.D.*.S...##........*...R.##.$......*.....##......##+############+##......##.....*......$.##.R...*........##...P.*.D.#######.....*...#.....###########.....
+
+; Level 3.
+level 3
+map #################......CC......##.R.CC....CC.D.##......##########...CC.*.......##......*.....$.########*#......##......+#########......**......##.R....**.D..$.##......**......#################
+
+; Level 4.
+level 4
+map #################....#....#....##..D.........$.##....#.G.G#....##.CC.#....#.CC.##.CR.#....#.CC.##.CR.#....#.CC.##.CC.#....#.CC.##....#G.G.#....##..D.........$.##....#....#....#################
+guard 6 8 north stepforward stepforward stepforward stepforward stepforward turnright turnright shoot
+guard 7 3 south stepforward stepforward stepforward stepforward stepforward turnright turnright shoot
+guard 8 8 north stepforward stepforward stepforward stepforward stepforward turnright turnright shoot
+guard 9 3 south stepforward stepforward stepforward stepforward stepforward turnright turnright shoot
+
+; Level 5.
+level 5
+map #################..P..#..<..#.$##.....#..<..#..##..#.....#..+..##R.#..D..#..*..#########%#..*..##..*..#%#########..*..#..D..#.R##..+..#.....#..##..#..>..#.....##$.#..>..#..S..#################
+
+; Level 6. 
+level 6
+map #################....*....*....##....*..P.*....##....*....*....##...#+##+#+#...##CCC#D..*..$.C.##CCC#R..*..#.D.##...######+#...##....**...*....##..R.**.$.*....##....**...*....#################
+
+; Level 7.
+level 7
+map #################....#....#....##.C..........D.##....#.$$.#....###.##########.###.....G##G.....##G.....##.....G####.########.####....#.RR.#....##.D..........P.##....#....#....#################
+guard 1 6 east stepforward stepforward stepforward stepforward stepforward turnleft turnleft shoot
+guard 6 5 west stepforward stepforward stepforward stepforward stepforward turnleft turnleft shoot
+guard 9 5 east stepforward stepforward stepforward stepforward stepforward turnright turnright shoot
+guard 14 6 west stepforward stepforward stepforward stepforward stepforward turnright turnright shoot
+
+; Level 8.
+level 8
+map #######..########.....####.....##.R.R\>>>>\.S..##..\..####..\..####^###..###v###..#^#......#v#....#^#......#v#..###^###..###v####..\..####..\..##.D.D.<<<<\$.$.##.....####.....########..#######
+
+; Level 9.
+level 9
+map ..############....#\.G......%#...##.############.#......P#..%..#.#.R...D.#.....########..#..$..##..$..#..########.....#.D...R.#.#..%..#P......#.############.##...#%......G.\#....############..
+guard 5 1 east wait stepforward stepforward stepforward stepforward stepforward turnabout shoot
+guard 10 10 west wait stepforward stepforward stepforward stepforward stepforward turnabout shoot
+
+; Level 10.
+level 10
+map #################....#.P..+....##.R..*....*..R.##....+#+*##....###+*##G...##+*###....+....+....##.D..*....*....##....##*+###*+####*+##....+G...##...G+.$$.*..D.##....*....#....#################
+guard 6 4 east stepforward stepforward stepforward turnright stepforward stepforward stepforward turnright
+guard 4 9 west stepforward stepforward stepforward turnabout stepforward stepforward stepforward turnabout
+guard 11 8 east stepforward stepforward stepforward turnabout stepforward stepforward stepforward turnabout
+
+; Level 11.
+level 11
+map #####.#####.....#...###...#####.#.R.<<<.D.....#.#...###G..###.#.#####*#####*#.##.$...*<....*<..#.$...*<....*<..######*#####*#.###...#+#G..#+#.#.#.R./\/.D.....#.#...###...#####.#####.#####.....
+guard 7 3 east wait stepforward stepforward turnleft wait stepforward stepforward turnleft
+guard 7 8 east wait stepforward stepforward turnright wait stepforward stepforward turnright
+
+; Level 12.
+level 12
+map ........#####...#########G..#####...#..........##.D.#..R$......##...#..........##...CC.CC.CC...##...CC.CC.CC...##..........#...##......$R..#.D.##..........#...#####..G#########...#####........
+guard 9 1 south shoot stepleft shoot stepleft shoot stepright stepright shoot
+guard 6 10 north shoot stepleft shoot stepleft shoot stepright stepright shoot
+
+

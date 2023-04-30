@@ -1,0 +1,8 @@
+*~
+*.err
+*.ERR
+.#*
+test.*
+TEST.*
+*.LOG
+loglib

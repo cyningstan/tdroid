@@ -1,0 +1,101 @@
+;
+; Team Droid: Jam Edition
+; A programming puzzle game with cute robots.
+;
+; Copyright (C) Damian Gareth Walker, 2022.
+; Default Level Pack
+;
+
+; Level Symbols:
+;   . Floor
+;   # Wall
+;   ^ North conveyor
+;   > East conveyor
+;   v South conveyor
+;   < West conveyor
+;   \ Anticlockwise Turntable
+;   / Clockwise Turntable
+;   % Teleporter
+;   * Forcefield
+;   + Generator
+;   $ Reader
+;   G Guard on floor
+;   R Robot spawner on floor
+;   D Data card on floor
+;   W Walker on floor
+;   S Spring on floor
+;   P Phaser on floor
+;   C Crate on floor
+
+; Name of the Level Pack
+name Jam Levels
+
+; Level 1. An Easy Introduction.
+level 1
+map ..................................####...............#.............D.#...............#....####....####....#...............#.$.............#...............####....R.............................
+
+; Level 2. Introducing Conveyor Belts.
+level 2
+map ......................................#^v#.$..........#^v#........#####..#####....>>>>....>>>>....<<<<.D..<<<<....#####..#####........#^v#.........R..#^v#......................................
+
+; Level 3. Introducing the Spring.
+; Use of the spring to jump over annoying conveyor belts.
+level 3
+map ....#......#.....##.#..D...#.##..##.#......#.##.....#vvvvvv#........#vvvvvv#.....................R..<<<..>>>..S..................##.#^^^^^^#.##..##.#......#.##..##.#...$..#.##.....#......#....
+
+; Level 4. Introducing Turntables.
+; Turntables help and hinder your path.
+level 4
+map ..############..R../...\../#.#....#.###.##.#.#....#.#.#.#./#.#....###.#.####.#....#.#.#..#\.\#....#.#/..D#.#.#....#.#.####.#.#....#.#/..../#.#....#.########.#....#........./..$..############..
+
+; Level 5. Introducing the Walker.
+; Use of lateral movement to navigate zigzags
+level 5
+map #####......######...########...##.W...<........##...#...<..#.D.####.######.#...#..#...<....#####..#.#...<.....#.###.#########.#.#...#.....#...#.#.R.#..$..#.###.#...#.......#...#############...
+
+; Level 6. Introducing Teleporters.
+; Has at least 1 isolated area accissible by teleporter only.
+level 6
+map .........................^v.........D....^v..%...........^v.......................>>>>>..#######..<<<<<..#.....#.........#.%...#.........#.....#....R....#...$.#.........#.....#.........#######
+
+; Level 7. Introducting Guards.
+; A guard on patrol protects the data card or reader.
+level 7
+map ..................................#######.........#G#...#.####....#.#.S.#.#..#..........#.#$............#.#.......#.#.D.#.#..#....#.#...#G####....#######........R..............................
+guard 3 3 south stepforward stepforward stepforward stepforward stepforward turnright turnright shoot
+guard 9 8 north stepforward stepforward stepforward stepforward stepforward turnright turnright shoot
+
+; Level 8. Introducing the Phaser.
+; Shoot an annoying guard to access the card or reader.
+level 8
+map ..................................P......#####...........#...#....#......#.D.#....#......G...#....#......G...#....#......#.$.#...........#...#....R......#####..................................
+guard 9 5 west wait wait wait wait wait wait wait shoot
+guard 9 6 west wait wait wait wait wait wait wait shoot
+
+; Level 9. Introducing Forcefields.
+; Shoot the generator to switch the forcefield off.
+level 9
+map .................######..######..#....#..#....#..#..P.#..#..$.#..#....#..+****#.......G..........................#....#..+****#..#.R..#..#.D..#..#....#..#....#..######..######.................
+guard 6 5 east stepforward turnleft stepforward turnright stepforward turnright wait shoot
+
+; Level 10. Introducing Crates.
+; Block a guard's line of fire on the crucial turn.
+; Or block a guard's movement forcing it on a new path.
+level 10
+map ...########.*......CC.G.....*.D..P.CC.......*......CC.......+***...CC..............########........########........CC..............CC.......+***.R.CC.......*......CC.G.....*.$....########.*...
+guard 6 1 south stepforward stepforward stepforward turnleft wait wait wait shoot
+guard 6 10 north stepforward stepforward stepforward turnright wait wait wait shoot
+
+; Level 11. Multibot required.
+; A 2-thick forcefield requiring phaser and spring to pass.
+; Do not provide spring or phaser on the level.
+level 11
+map ....................#...............#..G.+#####.....#....**...#.....#....**.D.#..........**...#..........**...#.....#....**.$.#.....#....**...#...R.#.G..######.....#...........................
+guard 7 2 south stepforward stepforward stepforward stepforward stepforward stepforward stepforward turnabout
+guard 6 9 north stepforward stepforward stepforward stepforward stepforward stepforward stepforward turnabout
+
+; Level 12. Multiple isolated robots.
+; Isolated areas each requiring a particular robot ability.
+level 12
+map ..................#########.......#..CC..R#####...#...C...#...#..###+######.D.#..#.G**.%#%>...#..#..**..#######..#$.**..#RCC%#...#..**..#....#...#..**.R######...########.......................
+guard 3 5 south stepforward stepforward stepforward stepforward turnabout wait wait shoot
